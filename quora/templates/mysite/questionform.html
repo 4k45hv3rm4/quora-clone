@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block center %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn-sm btn-outline-primary">
+    </form>
+{% endblock %}

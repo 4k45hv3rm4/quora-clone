@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block center %}
+
+    {% for q in users %}
+        <div class="text-monospace p-4 m-1 shadow" style="border:1px dashed #111;border-radius: 10px;font-size: 20px;">
+        <p class=" text-center text-light " ><span class="bg-success p-2 shadow" style="border-radius:15px;font-size: 25px;"><a href="{% url 'user_detail' q.username%}" class="btn-link  text-white text-decoration-none">{{q.username}}</a></span></p>
+        <p>BIO:-  {{q.bio}} </p>
+        <p>PROFESSION:- {{q.profession}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

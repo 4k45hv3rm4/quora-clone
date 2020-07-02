@@ -1,0 +1,14 @@
+{% extends  'base.html' %}
+
+{% block  center %}
+    <!-- <input type="text" value={{user.username}}>
+    <input type="text" value{{user.email}}>
+    {{user.profile.username}}
+    {{user.profile.profession}} -->
+    <form method="POST">
+    {% csrf_token%}
+    {{form_u.as_p}}
+    {{form_p.as_p}}
+    <input type="submit" class="btn-sm btn-outline-primary">
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block center %}
+
+    <div class="container m-auto ml-2 mb-4 jumbotron">
+    {% if registered %}
+        <strong>Thank You for Registering with Us.</strong>
+        <a href="{% url 'index' %}" class="btn-link btn">Return to the HomePage</a><br>
+    {% else %}
+        <strong class="display-3 mb-4">Register Here... </strong>
+
+        <form class="pt-3" method="POST" enctype="multipart/form-data">
+            <!-- ENCTYPE_DATA usage: -This is because if the user
+tries to upload a picture, the response from the form may contain binary data - and may be quite
+large. The response therefore will have to be broken into multiple parts to be transmitted back to
+the server .This tells the
+HTTP client (the web browser) to package and send the data accordingly-->
+
+            {% csrf_token %}
+            {{ registration_form.as_p }}
+
+
+            <input type="submit" name="submit" value="Register" class="btn btn-success">
+            <p class="p-2 m-1">Already a Member? <a href="{% url 'login' %}">Sign In Here...</a></p>
+        </form>
+    {% endif %}
+    </div>
+{% endblock %}

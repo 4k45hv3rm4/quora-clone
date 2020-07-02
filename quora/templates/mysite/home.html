@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block center %}
+
+    {% for q in questions %}
+    <div class="p-3 mb-2 text-monospace" style="">
+        <p> <h1><a href="{% url 'q_detail' slug=q.slug %}" class="text-decoration-none text-info">{{q.question}}</a></h2>
+        In <small>{{q.get_genre_display}}</small>
+        asked by <small>{{q.author}}</small>
+        </p>
+    <div class="btns">
+        <a class="shadow btn btn-link btn-success text-monospace text-light text-decoration-none" href="{% url 'answer' slug=q.slug %}"> Answer
+        </a>
+    </div>
+    <hr>
+    </div>
+    {% endfor %}
+{% endblock %}
