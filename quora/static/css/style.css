@@ -1,0 +1,45 @@
+
+
+
+.questions{
+    height:250px;
+    font-family: monospace;
+    background: linear-gradient(#e66465, #9198e5);
+ }
+.left-side{
+    color:white;
+}
+.content{
+    display: block;
+    align-items: center;
+    color: white;
+    font-family: monospace;
+
+}
+
+.d{
+    font-size:25px;
+    font-weight: 5;
+    align-items: center;
+
+}
+
+small{
+    font-size: 17px;
+    font-family: Arial;
+    text-transform: uppercase;
+    color:white;
+    background-color: #111;
+    padding:5px;
+}
+
+.searchField{
+    border:1px solid yellow;
+}
+.heightf{
+    height:100px;
+}
+.question {
+    height:150px;
+    font-family: monospace;
+}
